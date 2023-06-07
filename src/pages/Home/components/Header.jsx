@@ -8,7 +8,7 @@ const Header = () => {
           <img src="/assets/img1.jpg" className="w-full" />
           <div className="absolute h-full flex gap-5 transform top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
             <div className="text-white space-y-52 p-10">
-              <h2 className="text-7xl font-bold">
+              <h2 className="text-4xl lg:text-7xl font-bold">
                 Police Toy Cars Available <br />
                 Order Now!
               </h2>
@@ -27,7 +27,7 @@ const Header = () => {
           <img src="/assets/img2.jpg" className="w-full" />
           <div className="absolute h-full flex gap-5 transform top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
             <div className="text-white space-y-52 p-10">
-              <h2 className="text-7xl font-bold">
+              <h2 className="text-4xl lg:text-7xl font-bold">
                 Toy Cars Available <br />
                 Order Today
               </h2>
@@ -46,7 +46,7 @@ const Header = () => {
           <img src="/assets/img3.jpg" className="w-full" />
           <div className="absolute h-full flex gap-5 transform top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
             <div className="text-white space-y-52 p-10">
-              <h2 className="text-7xl font-bold">
+              <h2 className="text-4xl lg:text-7xl font-bold">
                 Super Toy Cars Available <br />
                 Buy Now!
               </h2>
