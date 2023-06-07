@@ -3,8 +3,8 @@ import {Link} from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="h-screen">
-      <footer className="footer p-10 bg-base-200 text-base-content fixed bottom-0">
+    <div>
+      <footer className="footer p-10 bg-base-200 text-base-content">
         <div>
           <Link to="/" className="text-3xl font-bold">
             SpeedyToys

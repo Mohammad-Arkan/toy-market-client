@@ -5,5 +5,7 @@ import {RouterProvider} from "react-router-dom";
 import router from "./routes/Route";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <div className="max-w-7xl mx-auto">
+    <RouterProvider router={router} />
+  </div>
 );
