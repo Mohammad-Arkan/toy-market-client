@@ -3,8 +3,8 @@ import React from "react";
 const Gallery = () => {
   return (
     <div className="container mx-auto px-5 mb-32 lg:px-32">
-      <h2 className="lg:my-24 my-10 text-center font-bold lg:text-5xl text-3xl underline">
-        Speedy Showcase
+      <h2 className="lg:my-24 my-10 text-center font-bold lg:text-5xl text-3xl">
+        (Speedy Showcase)
       </h2>
       <div className="-m-1 flex flex-wrap md:-m-2">
         <div className="flex w-1/2 flex-wrap">
