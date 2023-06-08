@@ -83,10 +83,11 @@ const Login = () => {
                   Sign Up
                 </Link>
               </small>
+              <div className="divider">OR</div>
+              <button onClick={handleGoogleSignIn} className="btn btn-gray">
+                <i className="fa-brands fa-google"></i> Login with Google
+              </button>
             </div>
-            <button onClick={handleGoogleSignIn} className="btn btn-gray">
-              <i className="fa-brands fa-google"></i> Login with Google
-            </button>
           </div>
         </div>
       </div>

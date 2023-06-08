@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
   return (
     <>
-      <div className="carousel w-full">
+      <div className="carousel w-full rounded-lg">
         <div id="slide1" className="carousel-item relative w-full">
           <img src="/assets/img1.jpg" className="w-full" />
           <div className="absolute h-full flex gap-5 transform top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
