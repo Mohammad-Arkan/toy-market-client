@@ -1,9 +1,13 @@
 import React, {useContext} from "react";
-import {Link} from "react-router-dom";
+import {Link, Navigate, useLocation, useNavigate} from "react-router-dom";
 import {AuthContext} from "../../providers/AuthProvider";
 
 const Login = () => {
-  const {signIn} = useContext(AuthContext);
+  const {signIn, googleSignIn, user} = useContext(AuthContext);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
+
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -18,6 +22,15 @@ const Login = () => {
       })
       .catch((err) => console.log(err));
   };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn();
+  };
+
+  if (user) {
+    navigate(from, {replace: true});
+  }
+
   return (
     <>
       <div className="hero min-h-screen bg-base-200">
@@ -71,7 +84,7 @@ const Login = () => {
                 </Link>
               </small>
             </div>
-            <button className="btn btn-gray">
+            <button onClick={handleGoogleSignIn} className="btn btn-gray">
               <i className="fa-brands fa-google"></i> Login with Google
             </button>
           </div>

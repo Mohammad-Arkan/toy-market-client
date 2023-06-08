@@ -14,16 +14,16 @@ const NavBar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/">All Toys</Link>
+        <Link to="/all-toys">All Toys</Link>
       </li>
       <li>
-        <Link to="/">My Toys</Link>
+        <Link to="/my-toys">My Toys</Link>
       </li>
       <li>
-        <Link to="/">Add A Toy</Link>
+        <Link to="/add-toy">Add A Toy</Link>
       </li>
       <li>
-        <Link to="/">Blogs</Link>
+        <Link to="/blogs">Blogs</Link>
       </li>
     </>
   );
@@ -63,7 +63,13 @@ const NavBar = () => {
         <div className="navbar-end">
           {user ? (
             <>
-              {user?.photoURL && <img src={user.photoURL} />}
+              {user?.photoURL && (
+                <img
+                  width={45}
+                  className="rounded-full mr-3"
+                  src={user.photoURL}
+                />
+              )}
               <button onClick={handleLogOut} className="btn">
                 Logout
               </button>
