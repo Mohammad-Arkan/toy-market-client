@@ -19,7 +19,7 @@ const ToyTabs = () => {
           <Tab>Vintage Cars</Tab>
         </TabList>
         <TabPanel>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 mx-6">
             {racingCars.map((rc) => (
               <div key={rc._id} className="card w-96 bg-base-100 shadow-xl">
                 <figure>
@@ -40,7 +40,7 @@ const ToyTabs = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 mx-6">
             {formulaCars.map((fc) => (
               <div key={fc._id} className="card w-96 bg-base-100 shadow-xl">
                 <figure>
@@ -61,7 +61,7 @@ const ToyTabs = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 mx-6">
             {vintageCars.map((vc) => (
               <div key={vc._id} className="card w-96 bg-base-100 shadow-xl">
                 <figure>

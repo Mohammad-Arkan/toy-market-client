@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
 import AllToysRow from "./AllToysRow";
 
 const AllToys = () => {
@@ -23,7 +22,6 @@ const AllToys = () => {
               <th>Sub-Category</th>
               <th>Price</th>
               <th>Available Quantity</th>
-              <th>View Details</th>
             </tr>
           </thead>
           <tbody>
