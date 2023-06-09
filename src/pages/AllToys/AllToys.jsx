@@ -17,11 +17,12 @@ const AllToys = () => {
         <table className="table w-full">
           <thead>
             <tr>
+              <th></th>
               <th>Seller</th>
               <th>Toy Name</th>
               <th>Sub-Category</th>
               <th>Price</th>
-              <th>Available Quantity</th>
+              <th>Quantity</th>
             </tr>
           </thead>
           <tbody>

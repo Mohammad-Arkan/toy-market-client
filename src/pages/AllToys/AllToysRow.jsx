@@ -5,6 +5,7 @@ const AllToysRow = ({toy}) => {
   const {sellerName, toyName, subCategory, price, availableQuantity} = toy;
   return (
     <tr>
+      <td></td>
       <td>{sellerName}</td>
       <td>{toyName}</td>
       <td>{subCategory}</td>
