@@ -11,8 +11,10 @@ const AllToys = () => {
   }, []);
   return (
     <div>
-      <h2 className="text-3xl text-center my-7">Available Toys: 102</h2>
-      <div className="overflow-x-auto w-full">
+      <h2 className="text-3xl text-center my-7">
+        Available Toys: {toys.length}
+      </h2>
+      <div className="overflow-x-auto w-full my-16">
         <table className="table w-full">
           <thead>
             <tr>
