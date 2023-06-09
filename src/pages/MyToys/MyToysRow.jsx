@@ -1,13 +1,21 @@
 import React from "react";
 
-const MyToysRow = ({toy}) => {
-  const {toyName, subCategory, detailsDescription, price, availableQuantity} =
-    toy;
+const MyToysRow = ({toy, handleDelete}) => {
+  const {
+    _id,
+    toyName,
+    subCategory,
+    detailsDescription,
+    price,
+    availableQuantity,
+  } = toy;
   return (
     <tr>
       <td>
-        <button className="btn btn-sm btn-circle">
-          <i class="fa-solid fa-xmark" style={{color: "#f88"}}></i>
+        <button
+          onClick={() => handleDelete(_id)}
+          className="btn btn-sm btn-circle">
+          <i className="fa-solid fa-xmark" style={{color: "#f88"}}></i>
         </button>
       </td>
       <td>{toyName}</td>

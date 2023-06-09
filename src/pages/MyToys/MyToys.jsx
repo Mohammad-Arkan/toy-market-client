@@ -12,7 +12,25 @@ const MyToys = () => {
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
-  console.log(toys);
+
+  const handleDelete = (id) => {
+    const proceed = confirm("Confirm that You Want To Delete It");
+    if (proceed) {
+      fetch(`http://localhost:5000/my-toys/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert("deleted successful");
+            const remaining = toys.filter((toy) => toy._id !== id);
+            setToys(remaining);
+          }
+        });
+    }
+  };
+
   return (
     <div>
       <h2 className="text-3xl text-center my-7">
@@ -32,7 +50,10 @@ const MyToys = () => {
           </thead>
           <tbody>
             {toys.map((toy) => (
-              <MyToysRow key={toy._id} toy={toy}></MyToysRow>
+              <MyToysRow
+                key={toy._id}
+                toy={toy}
+                handleDelete={handleDelete}></MyToysRow>
             ))}
           </tbody>
         </table>

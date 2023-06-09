@@ -29,8 +29,6 @@ const AddToy = () => {
       rating,
       detailsDescription,
     };
-
-    console.log(newToy);
   };
   return (
     <>
@@ -93,7 +91,7 @@ const AddToy = () => {
                 <span className="label-text">Price</span>
               </label>
               <input
-                type="text"
+                type="number"
                 name="price"
                 required
                 placeholder="Price"

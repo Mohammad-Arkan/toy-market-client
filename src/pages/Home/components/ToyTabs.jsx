@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {Link, useLoaderData} from "react-router-dom";
 import {Tab, Tabs, TabList, TabPanel} from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -19,7 +19,7 @@ const ToyTabs = () => {
           <Tab>Vintage Cars</Tab>
         </TabList>
         <TabPanel>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 mx-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 mx-6 gap-7">
             {racingCars.map((rc) => (
               <div key={rc._id} className="card w-96 bg-base-100 shadow-xl">
                 <figure>
