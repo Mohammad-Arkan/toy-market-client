@@ -4,29 +4,21 @@ import {AuthContext} from "../../providers/AuthProvider";
 import {pageTitle} from "../../utils/PageTitle";
 
 const Login = () => {
-  pageTitle("Login");
   const {signIn, googleSignIn, user} = useContext(AuthContext);
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+  pageTitle("Login");
 
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
 
     signIn(email, password)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-      })
-      .catch((err) => console.log(err));
-  };
-
-  const handleGoogleSignIn = () => {
-    googleSignIn();
+      .then((result) => {})
+      .catch((err) => alert(err));
   };
 
   if (user) {
@@ -86,7 +78,7 @@ const Login = () => {
                 </Link>
               </small>
               <div className="divider">OR</div>
-              <button onClick={handleGoogleSignIn} className="btn btn-gray">
+              <button onClick={googleSignIn} className="btn btn-gray">
                 <i className="fa-brands fa-google"></i> Login with Google
               </button>
             </div>

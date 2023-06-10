@@ -70,7 +70,7 @@ const NavBar = () => {
               {user?.photoURL && (
                 <img
                   width={45}
-                  className="rounded-full mr-3"
+                  className="rounded-full h-11 mr-3"
                   src={user.photoURL}
                 />
               )}

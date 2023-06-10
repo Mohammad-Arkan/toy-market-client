@@ -3,8 +3,9 @@ import {useLoaderData} from "react-router-dom";
 import {pageTitle} from "../../utils/PageTitle";
 
 const ToyDetails = () => {
-  pageTitle("Toy Details");
   const toy = useLoaderData();
+  console.log("check");
+  pageTitle("Toy Details");
   const {
     sellerName,
     toyName,

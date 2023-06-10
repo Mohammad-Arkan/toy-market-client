@@ -12,9 +12,9 @@ const AllToysRow = ({toy}) => {
       <td>${price}</td>
       <td>{availableQuantity}</td>
       <th>
-        <button className="btn btn-primary btn-xs">
-          <Link to={`/toys/${_id}`}>View Details</Link>
-        </button>
+        <Link className="btn btn-primary btn-xs" to={`/toys/${_id}`}>
+          View Details
+        </Link>
       </th>
     </tr>
   );

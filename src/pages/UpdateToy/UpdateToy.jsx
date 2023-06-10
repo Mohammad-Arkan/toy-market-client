@@ -1,8 +1,7 @@
 import React from "react";
-import {useContext} from "react";
-import {AuthContext} from "../../providers/AuthProvider";
 import {useLoaderData} from "react-router-dom";
 import {pageTitle} from "../../utils/PageTitle";
+import Swal from "sweetalert2";
 
 const UpdateToy = () => {
   pageTitle("Update Toy");
@@ -31,7 +30,11 @@ const UpdateToy = () => {
       body: JSON.stringify(updatedToy),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          Swal.fire("Good job!", "Your Toy Info Updated!", "success");
+        }
+      });
   };
   return (
     <>

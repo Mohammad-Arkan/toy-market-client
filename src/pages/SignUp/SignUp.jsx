@@ -1,11 +1,12 @@
 import React, {useContext} from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {AuthContext} from "../../providers/AuthProvider";
 import {pageTitle} from "../../utils/PageTitle";
 
 const SignUp = () => {
+  const {createUser, updateUserData} = useContext(AuthContext);
+  const navigate = useNavigate();
   pageTitle("Sign Up");
-  const {createUser} = useContext(AuthContext);
   const handleSignUp = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -19,10 +20,9 @@ const SignUp = () => {
         const user = result.user;
         updateUserData(user, name, photoURL);
         console.log(user);
+        navigate("/");
       })
-      .catch((err) => console.log(err));
-
-    console.log(name, email, password, photoURL);
+      .catch((err) => alert(err));
   };
 
   return (

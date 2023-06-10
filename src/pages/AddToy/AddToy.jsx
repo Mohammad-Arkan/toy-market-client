@@ -2,6 +2,7 @@ import React from "react";
 import {useContext} from "react";
 import {AuthContext} from "../../providers/AuthProvider";
 import {pageTitle} from "../../utils/PageTitle";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
   pageTitle("Add A Toy");
@@ -43,7 +44,7 @@ const AddToy = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          alert("A New Toy Added");
+          Swal.fire("Good Job!", "A New Toy Added Successfully!!", "success");
         }
       });
   };

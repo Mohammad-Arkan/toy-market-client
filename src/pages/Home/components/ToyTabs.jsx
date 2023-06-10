@@ -1,10 +1,19 @@
 import React from "react";
+import {useEffect} from "react";
+import {useState} from "react";
 import {Link, useLoaderData} from "react-router-dom";
 import {Tab, Tabs, TabList, TabPanel} from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 const ToyTabs = () => {
-  const toys = useLoaderData();
+  const [toys, setToys] = useState([]);
+
+  useEffect(() => {
+    fetch("https://toy-marketplace-server-tau-amber.vercel.app/toys")
+      .then((res) => res.json())
+      .then((data) => setToys(data))
+      .catch((err) => console.log(err));
+  }, []);
 
   const racingCars = toys.filter((toys) => toys.subCategory == "Racing Cars");
   const formulaCars = toys.filter((toys) => toys.subCategory == "Formula Cars");
@@ -33,9 +42,9 @@ const ToyTabs = () => {
                   <h3 className="text-start">Price: ${rc.price}</h3>
                   <p className="text-start">Ratings: {rc.rating}</p>
                   <div className="card-actions justify-end">
-                    <button className="btn btn-primary">
-                      <Link to={`toys/${rc._id}`}>View Details</Link>
-                    </button>
+                    <Link className="btn btn-primary" to={`toys/${rc._id}`}>
+                      View Details
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -54,9 +63,9 @@ const ToyTabs = () => {
                   <h3 className="text-start">Price: ${fc.price}</h3>
                   <p className="text-start">Ratings: {fc.rating}</p>
                   <div className="card-actions justify-end">
-                    <button className="btn btn-primary">
-                      <Link to={`toys/${fc._id}`}>View Details</Link>
-                    </button>
+                    <Link className="btn btn-primary" to={`toys/${fc._id}`}>
+                      View Details
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -75,9 +84,9 @@ const ToyTabs = () => {
                   <h3 className="text-start">Price: ${vc.price}</h3>
                   <p className="text-start">Ratings: {vc.rating}</p>
                   <div className="card-actions justify-end">
-                    <button className="btn btn-primary">
-                      <Link to={`toys/${vc._id}`}>View Details</Link>
-                    </button>
+                    <Link className="btn btn-primary" to={`toys/${vc._id}`}>
+                      View Details
+                    </Link>
                   </div>
                 </div>
               </div>
