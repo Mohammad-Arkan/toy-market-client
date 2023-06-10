@@ -9,7 +9,7 @@ const MyToys = () => {
   pageTitle("My Toys");
   const {user} = useContext(AuthContext);
   const [toys, setToys] = useState([]);
-  const url = `http://localhost:5000/my-toys/?email=${user?.email}`;
+  const url = `https://toy-marketplace-server-tau-amber.vercel.app/my-toys/?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -27,9 +27,12 @@ const MyToys = () => {
       confirmButtonText: "Yes, Delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/my-toys/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://toy-marketplace-server-tau-amber.vercel.app/my-toys/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
