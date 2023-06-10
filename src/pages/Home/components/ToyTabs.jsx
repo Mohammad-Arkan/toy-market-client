@@ -20,7 +20,7 @@ const ToyTabs = () => {
         </TabList>
         <TabPanel>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 mx-6 gap-7">
-            {racingCars.map((rc) => (
+            {racingCars.slice(0, 5).map((rc) => (
               <div key={rc._id} className="card w-96 bg-base-100 shadow-xl">
                 <figure>
                   <img src={rc.toyPictureUrl} />
@@ -31,7 +31,7 @@ const ToyTabs = () => {
                   <p className="text-start">Ratings: {rc.rating}</p>
                   <div className="card-actions justify-end">
                     <button className="btn btn-primary">
-                      <Link to="/toys/:id">View Details</Link>
+                      <Link to={`toys/${rc._id}`}>View Details</Link>
                     </button>
                   </div>
                 </div>
@@ -41,7 +41,7 @@ const ToyTabs = () => {
         </TabPanel>
         <TabPanel>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 mx-6">
-            {formulaCars.map((fc) => (
+            {formulaCars.slice(0, 5).map((fc) => (
               <div key={fc._id} className="card w-96 bg-base-100 shadow-xl">
                 <figure>
                   <img src={fc.toyPictureUrl} />
@@ -52,7 +52,7 @@ const ToyTabs = () => {
                   <p className="text-start">Ratings: {fc.rating}</p>
                   <div className="card-actions justify-end">
                     <button className="btn btn-primary">
-                      <Link to="/toys/:id">View Details</Link>
+                      <Link to={`toys/${fc._id}`}>View Details</Link>
                     </button>
                   </div>
                 </div>
@@ -62,7 +62,7 @@ const ToyTabs = () => {
         </TabPanel>
         <TabPanel>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 mx-6">
-            {vintageCars.map((vc) => (
+            {vintageCars.slice(0, 5).map((vc) => (
               <div key={vc._id} className="card w-96 bg-base-100 shadow-xl">
                 <figure>
                   <img src={vc.toyPictureUrl} />
@@ -73,7 +73,7 @@ const ToyTabs = () => {
                   <p className="text-start">Ratings: {vc.rating}</p>
                   <div className="card-actions justify-end">
                     <button className="btn btn-primary">
-                      <Link to="/toys/:id">View Details</Link>
+                      <Link to={`toys/${vc._id}`}>View Details</Link>
                     </button>
                   </div>
                 </div>

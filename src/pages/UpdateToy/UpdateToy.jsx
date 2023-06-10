@@ -1,11 +1,14 @@
 import React from "react";
 import {useContext} from "react";
 import {AuthContext} from "../../providers/AuthProvider";
+import {useLoaderData} from "react-router-dom";
 
-const AddToy = () => {
+const UpdateToy = () => {
+  const toy = useLoaderData();
+  console.log(toy);
   const {user} = useContext(AuthContext);
 
-  const handleAddToy = (event) => {
+  const handleUpdateToy = (event) => {
     event.preventDefault();
     const form = event.target;
     const sellerName = form.sellerName.value;
@@ -18,7 +21,7 @@ const AddToy = () => {
     const rating = form.rating.value;
     const detailsDescription = form.detailsDescription.value;
 
-    const newToy = {
+    const updatedToy = {
       sellerName,
       sellerEmail,
       toyName,
@@ -30,26 +33,19 @@ const AddToy = () => {
       detailsDescription,
     };
 
-    fetch("http://localhost:5000/toys", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newToy),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          alert("A New Toy Added");
-        }
-      });
+    // fetch(`http://localhost:5000/toys/${id}`, {
+    //   method: "PUT",
+    //   headers: {
+    //     "content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(updatedToy),
+    // });
   };
   return (
     <>
       <div className="text-3xl text-center"></div>
       <div className="card-body">
-        <form onSubmit={handleAddToy}>
+        <form onSubmit={handleUpdateToy}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="form-control">
               <label className="label">
@@ -167,7 +163,7 @@ const AddToy = () => {
             <input
               className="btn btn-block btn-primary"
               type="submit"
-              value="Add Toy"
+              value="Update Toy"
             />
           </div>
         </form>
@@ -176,4 +172,4 @@ const AddToy = () => {
   );
 };
 
-export default AddToy;
+export default UpdateToy;

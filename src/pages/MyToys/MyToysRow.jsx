@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const MyToysRow = ({toy, handleDelete}) => {
   const {
@@ -24,9 +25,9 @@ const MyToysRow = ({toy, handleDelete}) => {
       <td>{availableQuantity}</td>
       <td>{detailsDescription.slice(0, 40)}...</td>
       <th>
-        <button className="btn btn-gray btn-xs">
+        <Link className="btn btn-gray btn-xs" to={`/updateToy/${_id}`}>
           <i className="fa-solid fa-pen-to-square"></i>
-        </button>
+        </Link>
       </th>
     </tr>
   );
