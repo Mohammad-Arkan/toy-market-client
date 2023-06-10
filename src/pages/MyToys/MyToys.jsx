@@ -48,8 +48,10 @@ const MyToys = () => {
 
   return (
     <div>
-      <h2 className="text-3xl text-center my-7">
-        Available Toys: {toys.length}
+      <h2 className="text-xl font-semibold text-center my-7">
+        {toys.length
+          ? `You Have Added ${toys.length} Toys`
+          : "You Haven't Added Any Toy Yet"}
       </h2>
       <div className="overflow-x-auto w-full my-16">
         <table className="table w-full">
