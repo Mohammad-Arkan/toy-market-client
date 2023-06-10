@@ -5,17 +5,21 @@ import {pageTitle} from "../../utils/PageTitle";
 const AllToys = () => {
   pageTitle("All Toys");
   const [toys, setToys] = useState([]);
+  const [search, setSearch] = useState("");
   useEffect(() => {
     fetch("http://localhost:5000/toys")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
   return (
-    <div>
-      <h2 className="text-3xl text-center my-7">
-        Available Toys: {toys.length}
-      </h2>
-      <div className="overflow-x-auto w-full my-16">
+    <div className="text-center mt-5">
+      <input
+        onChange={(e) => setSearch(e.target.value)}
+        type="text"
+        placeholder="Search by Toy Name"
+        className="input input-bordered w-full max-w-xs"
+      />
+      <div className="overflow-x-auto w-full my-12">
         <table className="table w-full">
           <thead>
             <tr>
@@ -28,9 +32,15 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {toys.map((toy) => (
-              <AllToysRow key={toy._id} toy={toy}></AllToysRow>
-            ))}
+            {toys
+              .filter((toy) => {
+                return search.toLowerCase() === ""
+                  ? toy
+                  : toy.toyName.toLowerCase().includes(search);
+              })
+              .map((toy) => (
+                <AllToysRow key={toy._id} toy={toy}></AllToysRow>
+              ))}
           </tbody>
         </table>
       </div>
