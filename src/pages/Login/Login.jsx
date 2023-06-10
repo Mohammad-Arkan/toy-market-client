@@ -17,14 +17,11 @@ const Login = () => {
     const password = form.password.value;
 
     signIn(email, password)
-      .then((result) => {})
+      .then((result) => {
+        navigate(from, {replace: true});
+      })
       .catch((err) => alert(err));
   };
-
-  if (user) {
-    navigate(from, {replace: true});
-  }
-
   return (
     <>
       <div className="hero min-h-screen bg-base-200">

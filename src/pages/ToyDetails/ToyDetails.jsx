@@ -4,7 +4,6 @@ import {pageTitle} from "../../utils/PageTitle";
 
 const ToyDetails = () => {
   const toy = useLoaderData();
-  console.log("check");
   pageTitle("Toy Details");
   const {
     sellerName,

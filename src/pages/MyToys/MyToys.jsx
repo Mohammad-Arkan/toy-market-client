@@ -9,7 +9,7 @@ const MyToys = () => {
   pageTitle("My Toys");
   const {user} = useContext(AuthContext);
   const [toys, setToys] = useState([]);
-  const url = `https://toy-marketplace-server-tau-amber.vercel.app/my-toys/?email=${user?.email}`;
+  const url = `https://toy-marketplace-server-zynscript.vercel.app/my-toys/?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -28,7 +28,7 @@ const MyToys = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://toy-marketplace-server-tau-amber.vercel.app/my-toys/${id}`,
+          `https://toy-marketplace-server-zynscript.vercel.app/my-toys/${id}`,
           {
             method: "DELETE",
           }

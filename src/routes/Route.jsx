@@ -63,7 +63,7 @@ const router = createBrowserRouter([
         ),
         loader: ({params}) =>
           fetch(
-            `https://toy-marketplace-server-tau-amber.vercel.app/toys/${params.id}`
+            `https://toy-marketplace-server-zynscript.vercel.app/toys/${params.id}`
           ),
       },
       {
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
         element: <UpdateToy />,
         loader: ({params}) =>
           fetch(
-            `https://toy-marketplace-server-tau-amber.vercel.app/toys/${params.id}`
+            `https://toy-marketplace-server-zynscript.vercel.app/toys/${params.id}`
           ),
       },
     ],

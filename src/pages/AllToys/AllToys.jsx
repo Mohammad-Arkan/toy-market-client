@@ -7,7 +7,7 @@ const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [search, setSearch] = useState("");
   useEffect(() => {
-    fetch("https://toy-marketplace-server-tau-amber.vercel.app/toys")
+    fetch("https://toy-marketplace-server-zynscript.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
