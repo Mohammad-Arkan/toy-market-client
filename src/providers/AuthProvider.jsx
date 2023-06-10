@@ -34,6 +34,17 @@ const AuthProvider = ({children}) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  const updateUserData = (user, name, url) => {
+    updateProfile(user, {
+      displayName: name,
+      photoURL: url,
+    })
+      .then(() => {})
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   const logOut = () => {
     setLoading(true);
     return signOut(auth);
@@ -50,7 +61,15 @@ const AuthProvider = ({children}) => {
     };
   });
 
-  const authInfo = {createUser, user, signIn, googleSignIn, loading, logOut};
+  const authInfo = {
+    updateUserData,
+    googleSignIn,
+    createUser,
+    loading,
+    signIn,
+    logOut,
+    user,
+  };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

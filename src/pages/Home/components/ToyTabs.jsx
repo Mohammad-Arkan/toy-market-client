@@ -11,7 +11,10 @@ const ToyTabs = () => {
   const vintageCars = toys.filter((toys) => toys.subCategory == "Vintage Cars");
 
   return (
-    <div className="text-center my-36">
+    <div
+      className="text-center my-36"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom">
       <Tabs>
         <TabList>
           <Tab>Racing Cars</Tab>

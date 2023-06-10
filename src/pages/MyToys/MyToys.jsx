@@ -3,8 +3,10 @@ import {AuthContext} from "../../providers/AuthProvider";
 import {useState} from "react";
 import MyToysRow from "./MyToysRow";
 import Swal from "sweetalert2";
+import {pageTitle} from "../../utils/PageTitle";
 
 const MyToys = () => {
+  pageTitle("My Toys");
   const {user} = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const url = `http://localhost:5000/my-toys/?email=${user?.email}`;

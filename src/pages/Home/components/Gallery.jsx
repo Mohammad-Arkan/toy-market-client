@@ -2,7 +2,7 @@ import React from "react";
 
 const Gallery = () => {
   return (
-    <div className="container mx-auto px-5 mb-32 lg:px-32">
+    <div className="container mx-auto px-5 mb-32 lg:px-32" data-aos="zoom-in">
       <h2 className="lg:my-24 my-10 text-center font-bold lg:text-5xl text-3xl">
         (Speedy Showcase)
       </h2>

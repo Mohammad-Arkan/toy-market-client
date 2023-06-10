@@ -1,8 +1,10 @@
 import React from "react";
 import {useContext} from "react";
 import {AuthContext} from "../../providers/AuthProvider";
+import {pageTitle} from "../../utils/PageTitle";
 
 const AddToy = () => {
+  pageTitle("Add A Toy");
   const {user} = useContext(AuthContext);
 
   const handleAddToy = (event) => {

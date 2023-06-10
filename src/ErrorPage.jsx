@@ -1,7 +1,9 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {pageTitle} from "./utils/PageTitle";
 
 const ErrorPage = () => {
+  pageTitle("Page not Found");
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content text-center">

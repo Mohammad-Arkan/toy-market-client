@@ -2,16 +2,17 @@ import React from "react";
 import {useContext} from "react";
 import {AuthContext} from "../../providers/AuthProvider";
 import {useLoaderData} from "react-router-dom";
+import {pageTitle} from "../../utils/PageTitle";
 
 const UpdateToy = () => {
+  pageTitle("Update Toy");
   const toy = useLoaderData();
-  console.log(toy);
   const {_id, price, availableQuantity, detailsDescription} = toy;
 
   const handleUpdateToy = (event) => {
     event.preventDefault();
-    const form = event.target;
 
+    const form = event.target;
     const price = form.price.value;
     const availableQuantity = form.availableQuantity.value;
     const detailsDescription = form.detailsDescription.value;

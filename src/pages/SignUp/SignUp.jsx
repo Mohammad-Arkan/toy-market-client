@@ -1,8 +1,10 @@
 import React, {useContext} from "react";
 import {Link} from "react-router-dom";
 import {AuthContext} from "../../providers/AuthProvider";
+import {pageTitle} from "../../utils/PageTitle";
 
 const SignUp = () => {
+  pageTitle("Sign Up");
   const {createUser} = useContext(AuthContext);
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -15,6 +17,7 @@ const SignUp = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
+        updateUserData(user, name, photoURL);
         console.log(user);
       })
       .catch((err) => console.log(err));
