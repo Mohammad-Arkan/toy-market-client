@@ -1,6 +1,8 @@
 import React from "react";
+import {pageTitle} from "../../utils/PageTitle";
 
 const Blogs = () => {
+  pageTitle("Blogs");
   return (
     <div className="px-10 mx-auto my-10 space-y-3">
       <div className="collapse collapse-arrow bg-base-200">
