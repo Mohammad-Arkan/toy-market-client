@@ -3,11 +3,40 @@ import {useLoaderData} from "react-router-dom";
 
 const ToyDetails = () => {
   const toy = useLoaderData();
-  console.log(toy);
+  const {
+    sellerName,
+    toyName,
+    sellerEmail,
+    price,
+    rating,
+    availableQuantity,
+    detailsDescription,
+    toyPictureUrl,
+  } = toy;
   return (
-    <div>
-      <h2>Toy Details</h2>
-    </div>
+    <>
+      <div className="hero py-[10vh] px-3 bg-base-200">
+        <div className="hero-content flex-col lg:flex-row gap-7">
+          <img className="rounded-lg" width={500} src={toyPictureUrl} />
+          <div>
+            <h1 className="text-4xl font-bold ">{toyName}</h1>
+            <h2 className="font-semibold text-xl mt-5">
+              Seller Name: {sellerName}
+            </h2>
+            <h2 className="font-semibold text-xl my-1">
+              Seller Email: {sellerEmail}
+            </h2>
+            <h2 className="font-semibold text-xl">Price: ${price}</h2>
+            <h2 className="font-semibold text-xl my-1">Rating: {rating}</h2>
+
+            <h2 className="font-semibold text-xl mt-1">
+              Available Quantity: {availableQuantity}
+            </h2>
+            <p className="py-5">{detailsDescription}</p>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
