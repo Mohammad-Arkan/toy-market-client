@@ -11,11 +11,10 @@ import {
 } from "firebase/auth";
 import {createContext} from "react";
 import app from "../firebase/firebase.config";
-
 export const AuthContext = createContext();
-const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
+  const auth = getAuth(app);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -23,7 +22,7 @@ const AuthProvider = ({children}) => {
 
   const googleSignIn = () => {
     setLoading(true);
-    signInWithPopup(auth, googleProvider);
+    return signInWithPopup(auth, googleProvider);
   };
 
   const createUser = (email, password) => {

@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from "react";
 import AllToysRow from "./AllToysRow";
 import {pageTitle} from "../../utils/PageTitle";
+import {useLoaderData} from "react-router-dom";
 
 const AllToys = () => {
   pageTitle("All Toys");
   const [toys, setToys] = useState([]);
   const [search, setSearch] = useState("");
   useEffect(() => {
-    fetch("https://toy-marketplace-server-zynscript.vercel.app/toys")
+    fetch("https://toy-marketplace.onrender.com/toys")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);

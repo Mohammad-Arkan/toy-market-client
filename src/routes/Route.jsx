@@ -25,6 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/all-toys",
         element: <AllToys />,
+        loader: () => fetch("https://toy-marketplace.onrender.com/toys"),
       },
       {
         path: "/add-toy",
@@ -62,17 +63,13 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({params}) =>
-          fetch(
-            `https://toy-marketplace-server-zynscript.vercel.app/toys/${params.id}`
-          ),
+          fetch(`https://toy-marketplace.onrender.com/toys/${params.id}`),
       },
       {
         path: "/updateToy/:id",
         element: <UpdateToy />,
         loader: ({params}) =>
-          fetch(
-            `https://toy-marketplace-server-zynscript.vercel.app/toys/${params.id}`
-          ),
+          fetch(`https://toy-marketplace.onrender.com/toys/${params.id}`),
       },
     ],
   },
