@@ -33,7 +33,7 @@ const AddToy = () => {
       detailsDescription,
     };
 
-    fetch("https://toy-marketplace.onrender.com/toys", {
+    fetch("https://toy-marketplace-server-zynscript.vercel.app/toys", {
       method: "POST",
       headers: {
         "content-type": "application/json",
