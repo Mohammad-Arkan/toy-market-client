@@ -4,10 +4,10 @@ import {AuthContext} from "../../providers/AuthProvider";
 import {pageTitle} from "../../utils/PageTitle";
 
 const Login = () => {
-  const {signIn, googleSignIn, user} = useContext(AuthContext);
+  const {signIn, googleSignIn} = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from.pathname || "/";
   pageTitle("Login");
 
   const handleLogin = (event) => {
@@ -24,10 +24,9 @@ const Login = () => {
   };
   return (
     <>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row">
-          <div className="w-1/2 mr-16"></div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+      <div className="hero min-h-screen">
+        <div className="hero-content flex-col w-11/12 md:w-1/2 lg:flex-row">
+          <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
             <div className="card-body">
               <h1 className="text-2xl text-center font-bold">Login</h1>
               <form onSubmit={handleLogin}>
@@ -55,11 +54,12 @@ const Login = () => {
                     className="input input-bordered"
                   />
                 </div>
-                <label className="label">
-                  <Link className="label-text-alt link link-hover">
-                    Forgot password?
+                <small className="label-text-alt text-center">
+                  Don't Have Account?{" "}
+                  <Link to="/signup" className="link link-hover">
+                    Sign Up
                   </Link>
-                </label>
+                </small>
                 <div className="form-control mt-6">
                   <input
                     type="submit"
@@ -68,12 +68,7 @@ const Login = () => {
                   />
                 </div>
               </form>
-              <small className="label-text-alt text-center">
-                Don't Have Account?{" "}
-                <Link to="/signup" className="link link-hover">
-                  Sign Up
-                </Link>
-              </small>
+
               <div className="divider">OR</div>
               <button onClick={googleSignIn} className="btn btn-gray">
                 <i className="fa-brands fa-google"></i> Login with Google

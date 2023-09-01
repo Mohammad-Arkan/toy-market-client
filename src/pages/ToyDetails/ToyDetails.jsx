@@ -17,7 +17,7 @@ const ToyDetails = () => {
   } = toy;
   return (
     <>
-      <div className="hero py-[10vh] px-3 bg-base-200">
+      <div className="hero py-[10vh] px-3 min">
         <div className="hero-content flex-col lg:flex-row gap-7">
           <img className="rounded-lg" width={500} src={toyPictureUrl} />
           <div>
