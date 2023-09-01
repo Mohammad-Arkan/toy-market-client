@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import {Link, Navigate, useLocation, useNavigate} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import {AuthContext} from "../../providers/AuthProvider";
 import {pageTitle} from "../../utils/PageTitle";
 

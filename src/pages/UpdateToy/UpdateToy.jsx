@@ -22,7 +22,7 @@ const UpdateToy = () => {
       detailsDescription,
     };
 
-    fetch(`https://toy-marketplace-server-zynscript.vercel.app/toys/${_id}`, {
+    fetch(`https://toy-marketplace.onrender.com/toys/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
