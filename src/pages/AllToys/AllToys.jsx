@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import AllToysRow from "./AllToysRow";
 import {pageTitle} from "../../utils/PageTitle";
-import {useLoaderData} from "react-router-dom";
 
 const AllToys = () => {
   pageTitle("All Toys");
