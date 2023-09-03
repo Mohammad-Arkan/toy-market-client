@@ -9,3 +9,8 @@ body {
 .carousel-item img {
   height: 720px;
 }
+
+#toysMarquee > img {
+  width: 250px;
+  border-radius: 5%;
+}

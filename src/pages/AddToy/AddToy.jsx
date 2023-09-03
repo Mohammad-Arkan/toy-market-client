@@ -50,8 +50,10 @@ const AddToy = () => {
   };
   return (
     <>
-      <div className="text-3xl text-center"></div>
-      <div className="card-body">
+      <div className="text-3xl text-center my-5">
+        <h2 className="font-semibold">Add a Toy</h2>
+      </div>
+      <div className="card-body lg:w-2/3 mx-auto">
         <form onSubmit={handleAddToy}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="form-control">

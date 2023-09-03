@@ -44,7 +44,7 @@ const MyToys = () => {
   };
 
   return (
-    <div>
+    <div className="lg:w-3/4 mx-auto">
       <h2 className="text-xl font-semibold text-center my-7">
         {toys.length
           ? `You Have Added ${toys.length} Toys`

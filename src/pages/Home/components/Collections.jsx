@@ -5,7 +5,7 @@ const Collections = () => {
   return (
     <div>
       <h2 className="lg:text-5xl text-3xl font-semibold text-center">
-        (Carousol Collections)
+        Carousol Collections
       </h2>
       <div className="hero my-24 bg-base-200 rounded-lg">
         <div className="hero-content gap-10 p-10 flex-col lg:flex-row">
@@ -31,7 +31,7 @@ const Collections = () => {
               <img src="https://images.unsplash.com/photo-1616850508559-12c5ae8662bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" />
             </div>
           </div>
-          <div className="w-2/3" data-aos="fade-up-left">
+          <div className="lg:w-2/3" data-aos="fade-up-left">
             <h1 className="text-5xl font-bold">Our New Toy Cars Collection!</h1>
             <p className="py-6">
               "A little kid's dream is to drive a toy car. A kid's wish comes

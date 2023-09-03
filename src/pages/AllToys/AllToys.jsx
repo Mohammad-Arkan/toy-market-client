@@ -19,7 +19,7 @@ const AllToys = () => {
         placeholder="Search by Toy Name"
         className="input input-bordered w-full max-w-xs"
       />
-      <div className="overflow-x-auto w-full my-12">
+      <div className="overflow-x-auto lg:w-9/12 mx-auto my-12">
         <table className="table w-full">
           <thead>
             <tr>
